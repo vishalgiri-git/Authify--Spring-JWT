@@ -1,7 +1,7 @@
 
----
 
-````md
+
+
 # 🔐 Authify – Spring Security with JWT
 
 Authify is a Spring Boot application that demonstrates JWT-based authentication and role-based authorization using Spring Security.  
@@ -145,9 +145,4 @@ Authorization: Bearer <JWT_TOKEN>
 
 This project demonstrates a clean, secure, and production-ready implementation of Spring Security using JWT, following modern best practices and avoiding common security mistakes.
 
-```
 
-
-
-
-```
