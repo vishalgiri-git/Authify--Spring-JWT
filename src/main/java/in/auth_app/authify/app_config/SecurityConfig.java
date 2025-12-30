@@ -44,6 +44,8 @@ public class SecurityConfig {
                                 "/api/v1/auth/login",
                                 "/api/v1/profile/welcome")
                         .permitAll()
+                        .requestMatchers("/api/v1/profile/about")
+                        .hasRole("USER")
 
                         .requestMatchers("/api/v1/profile/all",
                                 "/api/v1/profile/delete")

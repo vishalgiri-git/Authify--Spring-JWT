@@ -45,6 +45,7 @@ public class ProfileController {
         return profileService.deleteProfileByEmail(email);
     }
 
+    @PreAuthorize("hasRole('ADMIN')")
     @GetMapping("/all")
     @ResponseStatus(HttpStatus.OK)
     public List<ProfileResponse> getAllProfiles(){
@@ -52,10 +53,17 @@ public class ProfileController {
 
     };
 
+    @PreAuthorize("hasRole('USER')")
+    @GetMapping("/about/{email}")
+    public UserEntity accessMyProfile(@PathVariable String email){
+        return profileService.accessMyProfile(email);
+    }
     // welcome page for authenticated users or admin.
     @GetMapping("/welcome")
     public String welcome(){
         return "Welcome to Authify! You have successfully accessed a public resource.";
     }
+
+
 
 }

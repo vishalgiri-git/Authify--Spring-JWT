@@ -1,5 +1,6 @@
 package in.auth_app.authify.service;
 
+import in.auth_app.authify.entity.UserEntity;
 import in.auth_app.authify.io.ProfileRequest;
 import in.auth_app.authify.io.ProfileResponse;
 import org.springframework.http.ResponseEntity;
@@ -15,5 +16,8 @@ public interface ProfileService {
 
     String deleteProfileByEmail(String email);
 
-    ResponseEntity<ProfileResponse> updateProfile(String email, ProfileRequest request);
+    ResponseEntity<ProfileResponse> updateProfile
+            (String email, ProfileRequest request);
+
+    UserEntity accessMyProfile(String email);
 }
