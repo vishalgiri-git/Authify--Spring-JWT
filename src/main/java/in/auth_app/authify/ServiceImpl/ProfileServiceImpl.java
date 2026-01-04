@@ -35,7 +35,8 @@ public class ProfileServiceImpl implements ProfileService {
 
         if(userRepository.existsByEmail(request.getEmail())){
             throw new ResponseStatusException(HttpStatus.CONFLICT, "Email already exist");
-        }
+        };
+
         request.setPassword(encoder.encode(request.getPassword()));
         request.setRole(Role.ROLE_USER); // default role user
         UserEntity newProfile = convertToUserEntity(request);
